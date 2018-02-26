@@ -1,9 +1,15 @@
 require('sinatra')
 require('sinatra/contrib/all')
+require('pry')
 require_relative('models/bottle')
 require_relative('models/distillery')
 
-get '/' do
-  "Welcome to my whisky shop"
-  # erb (:home)
+get '/bottles' do
+  @bottles = Bottle.all()
+  erb (:index)
+end
+
+get'/bottles/new' do
+  
+  erb (:new)
 end

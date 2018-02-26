@@ -3,12 +3,13 @@ require_relative('../db/sql_runner')
 class Bottle
 
   attr_reader :id, :distillery_id
-  attr_accessor :name, :type
+  attr_accessor :name, :type, :quantity
 
   def initialize (options)
     @id = options['id'].to_i
     @name = options['name']
     @type = options['type']
+    @quantity = options['quantity'].to_i
     @distillery_id = options['distillery_id'].to_i
   end
 
@@ -17,14 +18,15 @@ class Bottle
     (
       name,
       type,
+      quantity,
       distillery_id
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@name, @type, @distillery_id]
+    values = [@name, @type, @quantity, @distillery_id]
     result = SqlRunner.run(sql, values)
     id = result.first['id'].to_i
     @id = id
@@ -36,21 +38,39 @@ class Bottle
     (
       name,
       type,
+      quantity,
       distillery_id
       ) =
       (
-        $1, $2, $3
+        $1, $2, $3, $4
       )
-      WHERE id = $4"
-      values = [@name, @tyoe, @distillery_id, @id]
+      WHERE id = $5"
+      values = [@name, @type, @quantity, @distillery_id, @id]
       SqlRunner.run( sql, values )
+    end
+
+    def delete()
+      sql = "DELETE FROM bottles
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run( sql, values )
+    end
+
+    def distillery()
+      sql = "SELECT * FROM distilleries
+      WHERE id = $1"
+      values = [@distillery_id]
+      results = SqlRunner.run( sql, values)
+      distillery_data = results[0]
+      distillery = Distillery.new(distillery_data)
+      return distillery
     end
 
     def self.all()
       sql = "SELECT * FROM bottles"
-      student_data = SqlRunner.run(sql)
-      students = map_items(bottle_data)
-      return students
+      bottle_data = SqlRunner.run(sql)
+      bottles = Bottle.map_items(bottle_data)
+      return bottles
     end
 
 
@@ -61,5 +81,6 @@ class Bottle
     def self.delete_all()
       sql = "DELETE FROM bottles"
       SqlRunner.run( sql )
+    end
+
   end
-end

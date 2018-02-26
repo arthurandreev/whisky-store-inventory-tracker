@@ -1,0 +1,9 @@
+<p>Our full range of whisky bottles are displayed below</p>
+<% @bottles.each do |bottle| %>
+
+<p>Brand: <%= bottle.name() %></p>
+<p>Quantity: <%= bottle.quantity() %></p>
+<p>Type: <%= bottle.type() %></p>
+<p>Distillery: <%= bottle.distillery.name() %></p>
+<hr />
+<% end %>
