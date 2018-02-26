@@ -6,7 +6,7 @@ class Bottle
   attr_accessor :name, :type, :quantity
 
   def initialize (options)
-    @id = options['id'].to_i
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @type = options['type']
     @quantity = options['quantity'].to_i
@@ -47,6 +47,14 @@ class Bottle
       WHERE id = $5"
       values = [@name, @type, @quantity, @distillery_id, @id]
       SqlRunner.run( sql, values )
+    end
+
+    def self.find( id )
+      sql = "SELECT * FROM bottles WHERE id = $1"
+      values = [@id]
+      bottle = SqlRunner.run( sql, values )
+      result = Bottle.new( bottle.first )
+      return result
     end
 
     def delete()

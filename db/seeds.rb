@@ -15,10 +15,14 @@ Distillery.delete_all()
   distillery3 = Distillery.new({
     "name" => "Glenfiddich"
     })
+  distillery4 = Distillery.new({
+    "name" => "Strathisla"
+    })
 
     distillery1.save()
     distillery2.save()
     distillery3.save()
+    distillery4.save()
 
   bottle1 = Bottle.new({
    "name" => "Dalmore Cigar Malt",
@@ -54,11 +58,19 @@ Distillery.delete_all()
     "distillery_id" => distillery3.id
       })
 
+  bottle6 = Bottle.new({
+   "name" => "Chivas Regal",
+   "type" => "Blended",
+   "quantity" => 5,
+   "distillery_id" => distillery4.id
+      })
+
   bottle1.save()
   bottle2.save()
   bottle3.save()
   bottle4.save()
   bottle5.save()
+  bottle6.save()
 
   binding.pry
   nil

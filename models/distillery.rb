@@ -5,7 +5,7 @@ class Distillery
   attr_accessor :name
 
   def initialize(options)
-    @id = options['id'].to_i
+    @id = options['id'].to_i if options['id']
     @name = options['name']
   end
 
@@ -47,6 +47,14 @@ def bottle()
   bottle_data = results[0]
   bottle = Bottle.new(bottle_data)
   return bottle
+end
+
+def self.find( id )
+  sql = "SELECT * FROM distilleries WHERE id = $1"
+  values = [@id]
+  bottle = SqlRunner.run( sql, values )
+  result = Distillery.new( distillery.first )
+  return result
 end
 
 def self.all()
