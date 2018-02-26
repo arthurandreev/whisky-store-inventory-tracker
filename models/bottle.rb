@@ -30,6 +30,22 @@ class Bottle
     @id = id
   end
 
+  def update()
+    sql = "UPDATE bottles
+    SET
+    (
+      name,
+      type,
+      distillery_id
+      ) =
+      (
+        $1, $2, $3
+      )
+      WHERE id = $4"
+      values = [@name, @tyoe, @distillery_id, @id]
+      SqlRunner.run( sql, values )
+    end
+
     def self.all()
       sql = "SELECT * FROM bottles"
       student_data = SqlRunner.run(sql)
