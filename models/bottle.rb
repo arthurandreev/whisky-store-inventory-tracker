@@ -88,6 +88,11 @@ class Bottle
       end
     end
 
+    def mark_up()
+      profit = @sell_price - @buy_price
+      return profit
+    end
+    
     def self.all()
       sql = "SELECT * FROM bottles"
       bottle_data = SqlRunner.run(sql)
