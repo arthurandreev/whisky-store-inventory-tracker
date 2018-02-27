@@ -51,7 +51,7 @@ class Bottle
 
     def self.find( id )
       sql = "SELECT * FROM bottles WHERE id = $1"
-      values = [@id]
+      values = [id]
       bottle = SqlRunner.run( sql, values )
       result = Bottle.new( bottle.first )
       return result
@@ -72,6 +72,16 @@ class Bottle
       distillery_data = results[0]
       distillery = Distillery.new(distillery_data)
       return distillery
+    end
+
+    def stock_level()
+      if @quantity >= 50
+        return "High"
+      elsif @quantity >= 20
+        return "Medium"
+      else
+        return "Low"
+      end
     end
 
     def self.all()

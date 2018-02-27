@@ -1,8 +1,0 @@
-<p>Brand: <%= @product.name %></p>
-<p>Type: <%= @product.type %></p>
-<p>Quantity: <%= @product.quantity %></p>
-<p>Distillery: <%= @product.distillery.name %></p>
-<p><a href="/bottles/<%= @product.id %>/edit">Edit Order</a></p>
-<form method="post" action="/bottles/<%= @product.id %>/delete">
-  <input type="submit" value="Delete Order"/>
-</form>

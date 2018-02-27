@@ -1,0 +1,16 @@
+<h1>Our full range of whisky bottles are displayed below:</h1>
+<% @bottles.each do |bottle| %>
+
+<p>Brand: <%= bottle.name() %></p>
+<p>Type: <%= bottle.type() %></p>
+<p>Quantity: <%= bottle.quantity() %></p>
+<p>Distillery: <%= bottle.distillery.name() %></p>
+<p>Stock level: <%= bottle.stock_level() %></p>
+<p><a href="/bottles/<%= bottle.id %>">Show Order</a></p>
+<p>
+      <form action="/bottles/<%= bottle.id %>/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="DELETE" />
+      </form>
+</p>
+<hr />
+<% end %>

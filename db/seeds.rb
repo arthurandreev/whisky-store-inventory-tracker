@@ -34,34 +34,34 @@ Distillery.delete_all()
   bottle2 = Bottle.new({
     "name" => "Jura 1984 Vintage",
     "type" => "Single Malt",
-    "quantity" => 5,
+    "quantity" => 55,
     "distillery_id" => distillery2.id
     })
 
   bottle3 = Bottle.new({
     "name" => "Dalmore 12 year old",
     "type" => "Single Malt",
-    "quantity" => 5,
+    "quantity" => 15,
     "distillery_id" => distillery1.id
     })
   bottle4 = Bottle.new({
     "name" => "Jura One and All",
     "type" => "Single Malt",
-    "quantity" => 5,
+    "quantity" => 35,
     "distillery_id" => distillery2.id
     })
 
   bottle5 = Bottle.new({
     "name" => "Glenfiddich Project XX",
     "type" => "Single Malt",
-    "quantity" => 5,
+    "quantity" => 20,
     "distillery_id" => distillery3.id
       })
 
   bottle6 = Bottle.new({
    "name" => "Chivas Regal",
    "type" => "Blended",
-   "quantity" => 5,
+   "quantity" => 50,
    "distillery_id" => distillery4.id
       })
 
