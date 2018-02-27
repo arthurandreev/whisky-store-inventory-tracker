@@ -10,6 +10,7 @@ get '/bottles' do
 end
 
 get '/bottles/new' do
+  @distilleries = Distillery.all()
   erb ( :new )
 end
 
@@ -19,11 +20,11 @@ end
 #   erb( :show )
 # end
 #
-# post '/bottles' do
-#   @product = Bottle.new( params )
-#   @product.save()
-#   erb( :create )
-# end
+post '/bottles' do
+  product = Bottle.new( params )
+  product.save()
+  erb( :create )
+end
 
 # get '/bottles/:id' do
 #   erb (:show)

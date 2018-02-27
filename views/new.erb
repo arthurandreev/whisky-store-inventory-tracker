@@ -8,6 +8,13 @@
       <option value="Blended">Blended</option>
     </select>
 
+    <label for="distillery-id">Select distillery:</label>
+      <select id="distillery-id" name="distillery_id">
+        <% for distillery in @distilleries %>
+          <option value="<%= distillery.id %>"><%= distillery.name %></option>
+        <% end %>
+      </select>
+
   <label for="quantity">Quantity:</label>
     <input id="quantity" type="number" name="quantity"/>
 

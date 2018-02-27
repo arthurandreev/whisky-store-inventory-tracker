@@ -64,7 +64,7 @@ def self.all()
   return distilleries
 end
 
-
+#ask instructor to explain below
 def self.map_items(distillery_data)
   return distillery_data.map { |distillery| Distillery.new(distillery) }
 end
