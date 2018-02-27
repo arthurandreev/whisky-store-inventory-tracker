@@ -11,5 +11,7 @@ CREATE TABLE bottles (
   name VARCHAR(255),
   type VARCHAR(255),
   distillery_id INT8 REFERENCES distilleries(id) ON DELETE CASCADE,
-  quantity INT4
+  quantity INT4,
+  buy_price INT4,
+  sell_price INT4
 );

@@ -28,41 +28,53 @@ Distillery.delete_all()
    "name" => "Dalmore Cigar Malt",
    "type" => "Single Malt",
    "quantity" => 5,
-   "distillery_id" => distillery1.id
+   "distillery_id" => distillery1.id,
+   "buy_price" => 40,
+   "sell_price" => 55
   })
 
   bottle2 = Bottle.new({
     "name" => "Jura 1984 Vintage",
     "type" => "Single Malt",
     "quantity" => 55,
-    "distillery_id" => distillery2.id
+    "distillery_id" => distillery2.id,
+    "buy_price" => 50,
+    "sell_price" => 65
     })
 
   bottle3 = Bottle.new({
     "name" => "Dalmore 12 year old",
     "type" => "Single Malt",
     "quantity" => 15,
-    "distillery_id" => distillery1.id
+    "distillery_id" => distillery1.id,
+    "buy_price" => 20,
+    "sell_price" => 45
     })
   bottle4 = Bottle.new({
     "name" => "Jura One and All",
     "type" => "Single Malt",
     "quantity" => 35,
-    "distillery_id" => distillery2.id
+    "distillery_id" => distillery2.id,
+    "buy_price" => 25,
+    "sell_price" => 40
     })
 
   bottle5 = Bottle.new({
     "name" => "Glenfiddich Project XX",
     "type" => "Single Malt",
     "quantity" => 20,
-    "distillery_id" => distillery3.id
+    "distillery_id" => distillery3.id,
+    "buy_price" => 70,
+    "sell_price" => 90
       })
 
   bottle6 = Bottle.new({
    "name" => "Chivas Regal",
    "type" => "Blended",
    "quantity" => 50,
-   "distillery_id" => distillery4.id
+   "distillery_id" => distillery4.id,
+   "buy_price" => 60,
+   "sell_price" => 70
       })
 
   bottle1.save()

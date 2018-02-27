@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Bottle
 
   attr_reader :id, :distillery_id
-  attr_accessor :name, :type, :quantity
+  attr_accessor :name, :type, :quantity, :buy_price, :sell_price
 
   def initialize (options)
     @id = options['id'].to_i if options['id']
@@ -11,6 +11,8 @@ class Bottle
     @type = options['type']
     @quantity = options['quantity'].to_i
     @distillery_id = options['distillery_id'].to_i
+    @buy_price = options['buy_price'].to_i
+    @sell_price = options['sell_price'].to_i
   end
 
   def save()
@@ -19,14 +21,16 @@ class Bottle
       name,
       type,
       quantity,
-      distillery_id
+      distillery_id,
+      buy_price,
+      sell_price
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@name, @type, @quantity, @distillery_id]
+    values = [@name, @type, @quantity, @distillery_id, @buy_price, @sell_price]
     result = SqlRunner.run(sql, values)
     id = result.first['id'].to_i
     @id = id
