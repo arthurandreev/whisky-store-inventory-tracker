@@ -1,7 +1,7 @@
 <h1>Our full range of distilleries are displayed below:</h1>
 <% @distilleries.each do |distillery| %>
 
-<p>Name: <%= distillery.name() %></p>
+<p>Distillery name: <%= distillery.name() %></p>
 <p><a href="/distilleries/<%= distillery.id %>">Show Distillery</a></p>
 <p>
       <form action="/distilleries/<%= distillery.id %>/delete" method="POST">

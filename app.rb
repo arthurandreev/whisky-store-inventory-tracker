@@ -40,6 +40,11 @@ get '/distilleries/new' do
   erb ( :"distilleries/new")
 end
 
+get '/distilleries/:id' do
+  @distillery = Distillery.find(params[:id])
+  erb( :"distilleries/show" )
+end
+
 post '/distilleries' do
   distillery = Distillery.new( params )
   distillery.save()

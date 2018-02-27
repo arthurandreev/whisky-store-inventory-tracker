@@ -51,8 +51,8 @@ end
 
 def self.find( id )
   sql = "SELECT * FROM distilleries WHERE id = $1"
-  values = [@id]
-  bottle = SqlRunner.run( sql, values )
+  values = [id]
+  distillery = SqlRunner.run( sql, values )
   result = Distillery.new( distillery.first )
   return result
 end
