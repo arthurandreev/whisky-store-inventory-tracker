@@ -32,8 +32,7 @@ class Bottle
     RETURNING id"
     values = [@name, @type, @quantity, @distillery_id, @buy_price, @sell_price]
     result = SqlRunner.run(sql, values)
-    id = result.first['id'].to_i
-    @id = id
+    @id = result.first['id'].to_i
   end
 
   def update()
@@ -92,7 +91,7 @@ class Bottle
       profit = @sell_price - @buy_price
       return profit
     end
-    
+
     def self.all()
       sql = "SELECT * FROM bottles"
       bottle_data = SqlRunner.run(sql)

@@ -4,14 +4,18 @@ require('pry')
 require_relative('models/bottle')
 require_relative('models/distillery')
 
+get '/bottles/homepage' do
+  erb( :"/homepage" )
+end
+
 get '/bottles' do
   @bottles = Bottle.all()
-  erb ( :"bottles/index" )
+  erb( :"bottles/index" )
 end
 
 get '/bottles/new' do
   @distilleries = Distillery.all()
-  erb ( :"bottles/new" )
+  erb( :"bottles/new" )
 end
 
 get '/bottles/:id' do
@@ -33,11 +37,11 @@ end
 
 get '/distilleries' do
   @distilleries = Distillery.all()
-  erb ( :"distilleries/index")
+  erb( :"distilleries/index")
 end
 
 get '/distilleries/new' do
-  erb ( :"distilleries/new")
+  erb( :"distilleries/new")
 end
 
 get '/distilleries/:id' do
@@ -56,7 +60,3 @@ post '/distilleries/:id/delete' do
   distillery.delete()
   redirect to('/distilleries')
 end
-
-# post '/bottles/:id' do
-#   erb (:update)
-# end

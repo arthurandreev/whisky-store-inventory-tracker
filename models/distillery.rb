@@ -1,34 +1,44 @@
 require_relative('../db/sql_runner')
 
 class Distillery
-  attr_reader :id
-  attr_accessor :name
 
-  def initialize(options)
+  attr_reader :id
+  attr_accessor :name, :region
+
+  def initialize (options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @region = options['region']
   end
 
   def save()
     sql = "INSERT INTO distilleries
     (
-      name
+      name,
+      region
     )
     VALUES
     (
-      $1
+      $1, $2
     )
     RETURNING id"
-    values = [@name]
-    results = SqlRunner.run(sql, values)
-    @id = results.first['id'].to_i
+    values = [@name, @region]
+    result = SqlRunner.run(sql, values)
+    @id = result.first['id'].to_i
 end
 
 def update()
   sql = "UPDATE distilleries
-    SET name = $1
-    WHERE id = $2"
-    values = [@name, @id]
+    SET
+    (
+    name,
+    region
+  ) =
+  (
+    $1, $2
+  )
+    WHERE id = $3"
+    values = [@name, @region, @id]
     SqlRunner.run( sql, values )
 end
 
@@ -64,7 +74,6 @@ def self.all()
   return distilleries
 end
 
-#ask instructor to explain below
 def self.map_items(distillery_data)
   return distillery_data.map { |distillery| Distillery.new(distillery) }
 end

@@ -1,28 +1,29 @@
-<form method="post" action="/bottles">
-  <label for="name">Brand:</label>
-    <input id="name" type="text" name="name" />
-
-  <label for="type-select">Select type:</label>
-    <select id="type-select" name="type">
+<form class="bottle_form" method="post" action="/bottles">
+  <div class="form-group">
+  <label for="name">Brand</label>
+    <input id="name" type="text" name="name" class="form-control" placeholder="Enter brand here" />
+    <br>
+  <label for="type-select">Select type</label>
+    <select id="type-select" name="type" class="form-control">
       <option value="Single Malt">Single Malt</option>
       <option value="Blended">Blended</option>
     </select>
-
-    <label for="distillery-id">Select distillery:</label>
-      <select id="distillery-id" name="distillery_id">
+    <br>
+    <label for="distillery-id">Select distillery</label>
+      <select id="distillery-id" name="distillery_id" class="form-control">
         <% for distillery in @distilleries %>
           <option value="<%= distillery.id %>"><%= distillery.name %></option>
         <% end %>
       </select>
-
-  <label for="quantity">Quantity:</label>
-    <input id="quantity" type="number" name="quantity"/>
-
-  <label for="buy_price">Buy price:</label>
-    <input id="buy_price" type="number" name="buy_price"/>
-
-  <label for="sell_price">Sell price:</label>
-    <input id="sell_price" type="number" name="sell_price"/>
-
-    <input type='submit' value="Add New Product"/>
+<br>
+  <label for="quantity">Quantity</label>
+    <input id="quantity" type="number" name="quantity" class="form-control" placeholder="Enter quantity here"/>
+    <br>
+  <label for="buy_price">Buy price</label>
+    <input id="buy_price" type="number" name="buy_price" class="form-control" placeholder="Enter buy price here"/>
+    <br>
+  <label for="sell_price">Sell price</label>
+    <input id="sell_price" type="number" name="sell_price" class="form-control" placeholder="Enter sell price here"/>
+<br>
+    <input type="submit" class="btn btn-primary" value="Add New Product"/>
 </form>

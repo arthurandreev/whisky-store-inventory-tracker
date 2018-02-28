@@ -1,0 +1,46 @@
+body {
+  background-color: white;
+}
+
+p   {
+  font-family: monospace;
+  color: black;
+
+}
+
+h5 {
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.bottle_form, .distillery_form {
+  font-family: monospace;
+}
+
+.btn {
+  margin-left: 2px;
+}
+/*
+.banner {
+  border-radius: 10px;
+} */
+
+.grid {
+  border: solid 2px white;
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+
+.cell {
+  flex: 1;
+  padding: 10px;
+  border: solid 1px white;
+}
+
+a {
+  color: white;
+}

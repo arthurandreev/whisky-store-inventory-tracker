@@ -1,4 +1,5 @@
-<h1>Stock inventory </h1>
+<h5>CURRENT STOCKLIST</h5>
+<hr>
 <% @bottles.each do |bottle| %>
 
 <p>Brand: <%= bottle.name() %></p>
@@ -9,10 +10,10 @@
 <p>Sell price: <%= bottle.sell_price() %></p>
 <p>Stock level: <%= bottle.stock_level() %></p>
 <p>Mark up: <%= bottle.mark_up() %></p>
-<p><a href="/bottles/<%= bottle.id %>">Show Order</a></p>
+<p><a href="/bottles/<%= bottle.id %>">SHOW ORDER</a></p>
 <p>
       <form action="/bottles/<%= bottle.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="DELETE" />
+        <input class="btn btn-danger" type="submit" value="DELETE" />
       </form>
 </p>
 <hr />

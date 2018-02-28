@@ -3,7 +3,8 @@ DROP TABLE distilleries;
 
 CREATE TABLE distilleries (
   id SERIAL8 primary key,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  region VARCHAR(255)
 );
 
 CREATE TABLE bottles (

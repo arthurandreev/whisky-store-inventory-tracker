@@ -1,11 +1,13 @@
-<h1>Stock inventory </h1>
+<h5>DISTILLERIES/SUPPLIERS</h5>
+<hr>
 <% @distilleries.each do |distillery| %>
 
-<p>Distillery name: <%= distillery.name() %></p>
-<p><a href="/distilleries/<%= distillery.id %>">Show Distillery</a></p>
+<p>Name: <%= distillery.name() %></p>
+<p>Region: <%= distillery.region() %></p>
+<h5><a href="/distilleries/<%= distillery.id %>">SHOW DISTILLERY</a></h5>
 <p>
       <form action="/distilleries/<%= distillery.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="DELETE" />
+        <input class="btn btn-danger" type="submit" value="DELETE" />
       </form>
 </p>
 <hr />
