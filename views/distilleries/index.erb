@@ -5,12 +5,13 @@
 
 <p>Name: <%= distillery.name() %></p>
 <p>Region: <%= distillery.region() %></p>
-<a class="show" href="/distilleries/<%= distillery.id %>">SHOW ENTRY</a>
+<a class="show" href="/distilleries/<%= distillery.id %>">SHOW DISTILLERY</a>
+<form action="/distilleries/<%= distillery.id %>/edit" method="GET">
+  <input type="submit" value="UPDATE DISTILLERY" />
+  <br>
       <form action="/distilleries/<%= distillery.id %>/delete" method="POST">
-        <input type="submit" value="DELETE ENTRY" />
+        <input type="submit" value="DELETE DISTILLERY" />
       </form>
-    <form action="/distilleries/<%= distillery.id %>/edit" method="GET">
-      <input type="submit" value="EDIT ENTRY" />
     </form>
 <hr />
 <% end %>
