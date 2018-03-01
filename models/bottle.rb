@@ -79,11 +79,11 @@ class Bottle
 
     def stock_level()
       if @quantity >= 50
-        return "High"
+        return "High (more than 50 bottles)"
       elsif @quantity >= 20
-        return "Medium"
+        return "Medium (between 20 and 50 bottles)"
       else
-        return "Low"
+        return "Low (below 20 bottles, please order more stock now!)"
       end
     end
 

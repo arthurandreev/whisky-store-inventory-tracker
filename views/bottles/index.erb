@@ -1,20 +1,21 @@
-<h5>CURRENT STOCKLIST</h5>
-<hr>
-<% @bottles.each do |bottle| %>
+<div class="table">
+  <h5>CURRENT STOCKLIST</h5>
+  <hr>
+  <% @bottles.each do |bottle| %>
 
-<p>Brand: <%= bottle.name() %></p>
-<p>Type: <%= bottle.type() %></p>
-<p>Quantity: <%= bottle.quantity() %></p>
-<p>Distillery: <%= bottle.distillery.name() %></p>
-<p>Buy price: <%= bottle.buy_price() %></p>
-<p>Sell price: <%= bottle.sell_price() %></p>
-<p>Stock level: <%= bottle.stock_level() %></p>
-<p>Mark up: <%= bottle.mark_up() %></p>
-<p><a href="/bottles/<%= bottle.id %>">SHOW ORDER</a></p>
-<p>
-      <form action="/bottles/<%= bottle.id %>/delete" method="POST">
-        <input class="btn btn-danger" type="submit" value="DELETE" />
-      </form>
-</p>
-<hr />
-<% end %>
+  <p>Brand: <%= bottle.name() %></p>
+  <p>Type: <%= bottle.type() %></p>
+  <p>Quantity: <%= bottle.quantity() %></p>
+  <p>Distillery: <%= bottle.distillery.name() %></p>
+  <p>Buy price: £<%= bottle.buy_price() %></p>
+  <p>Sell price: £<%= bottle.sell_price() %></p>
+  <p>Stock level: <%= bottle.stock_level() %></p>
+  <p>Mark up: £<%= bottle.mark_up() %></p>
+  <button type="button" class="btn btn-info"<a href="/bottles/<%= bottle.id %>">SHOW ORDER</a></button>
+  <br>
+  <form action="/bottles/<%= bottle.id %>/delete" method="POST">
+    <input class="btn btn-danger" type="submit" value="DELETE ORDER" />
+  </form>
+  <hr />
+  <% end %>
+</div>

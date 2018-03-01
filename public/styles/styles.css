@@ -1,29 +1,15 @@
-body {
-  background-color: white;
-}
-
-p   {
-  font-family: monospace;
-  color: black;
-
-}
-
-h5 {
-  font-family: monospace;
-  font-weight: bold;
-}
-
-.bottle_form, .distillery_form {
+p {
   font-family: monospace;
 }
 
-.btn {
-  margin-left: 2px;
+.table {
+  margin-left: 4px;
 }
-/*
-.banner {
-  border-radius: 10px;
-} */
+
+button {
+  position: relative;
+  bottom: 3px;
+}
 
 .grid {
   border: solid 2px white;
@@ -43,4 +29,5 @@ h5 {
 
 a {
   color: white;
+  font-family: monospace;
 }
