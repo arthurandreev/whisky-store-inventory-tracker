@@ -4,7 +4,7 @@ require('pry')
 require_relative('models/bottle')
 require_relative('models/distillery')
 
-get '/bottles/homepage' do
+get '/' do
   erb( :"/homepage" )
 end
 
@@ -27,6 +27,19 @@ post '/bottles' do
   product = Bottle.new( params )
   product.save()
   erb( :"bottles/create" )
+end
+
+#edit route
+get 'bottles/:id/edit' do
+  @product = Bottle.find( params[:id] )
+  @distilleries = Distillery.all()
+  erb( :"bottles/edit" )
+end
+
+#update route
+post '/bottles/:id' do
+  Bottle.new( params ).update
+  redirect to('/bottles')
 end
 
 post '/bottles/:id/delete' do

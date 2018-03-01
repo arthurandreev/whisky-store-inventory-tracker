@@ -1,0 +1,31 @@
+<div class="table">
+<form class="bottle_form" method="post" action="/bottles/<%= @product.id %>">
+  <div class="form-group">
+  <label for="name">Brand</label>
+    <input id="name" type="text" name="name" class="form-control" value="<% @product.name %>" />
+    <br>
+  <label for="type-select">Select type</label>
+    <select id="type-select" name="type" class="form-control">
+      <option value="Single Malt"<%= "selected" if @product.type == "Single Malt" %> >Single Malt</option>
+      <option value="Blended"<%= "selected" if @product.type == "Blended" %> >Blended</option>
+    </select>
+    <br>
+    <label for="distillery-id">Select distillery</label>
+      <select id="distillery-id" name="distillery_id" class="form-control">
+        <% for distillery in @distilleries %>
+          <option value="<%= distillery.id %>"><%= distillery.name %></option>
+        <% end %>
+      </select>
+<br>
+  <label for="quantity">Quantity</label>
+    <input id="quantity" type="number" name="quantity" class="form-control" value="<% @product.quantity %>"/>
+    <br>
+  <label for="buy_price">Buy price</label>
+    <input id="buy_price" type="number" name="buy_price" class="form-control" value="<% @product.buy_price %>"/>/>
+    <br>
+  <label for="sell_price">Sell price</label>
+    <input id="sell_price" type="number" name="sell_price" class="form-control" value="<% @product.sell_price %>"/>/>
+    <input type="submit" class="btn btn-primary" value="EDIT ORDER"/>
+</form>
+</div>
+<footer class="footer"> (c) 2018 Whisky Villains</footer>
