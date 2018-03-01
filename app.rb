@@ -30,7 +30,7 @@ post '/bottles' do
 end
 
 #edit route
-get 'bottles/:id/edit' do
+get '/bottles/:id/edit' do
   @product = Bottle.find( params[:id] )
   @distilleries = Distillery.all()
   erb( :"bottles/edit" )
@@ -66,6 +66,16 @@ post '/distilleries' do
   distillery = Distillery.new( params )
   distillery.save()
   erb( :"distilleries/create")
+end
+
+get '/distilleries/:id/edit' do
+  @distillery = Distillery.find( params[:id] )
+  erb( :"distilleries/edit" )
+end
+
+post '/distilleries/:id' do
+  Distillery.new( params ).update
+  redirect to('/distilleries')
 end
 
 post '/distilleries/:id/delete' do

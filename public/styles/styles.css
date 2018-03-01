@@ -1,14 +1,22 @@
-p {
+html {
   font-family: monospace;
 }
 
-h3 {
+.index {
   font-family: monospace;
   text-align: center;
 }
 
 .table {
   margin-left: 4px;
+}
+
+.show {
+color: black;
+}
+
+.links {
+  color: black;
 }
 
 button {

@@ -83,7 +83,7 @@ class Bottle
       elsif @quantity >= 20
         return "Medium (between 20 and 50 bottles)"
       else
-        return "Low (below 20 bottles, please order more stock now!)"
+        return "Low (below 20 bottles, order more stock soon!)"
       end
     end
 

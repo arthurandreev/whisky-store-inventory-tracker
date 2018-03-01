@@ -1,16 +1,17 @@
 <div class="table">
-<h5>DISTILLERIES/SUPPLIERS</h5>
+<h3>CURRENT LIST OF DISTILLERIES</h3>
 <hr>
 <% @distilleries.each do |distillery| %>
 
 <p>Name: <%= distillery.name() %></p>
 <p>Region: <%= distillery.region() %></p>
-<button type="button" class="btn btn-info"<a href="/distilleries/<%= distillery.id %>">SHOW ENTRY</a></button>
-<div>
+<a class="show" href="/distilleries/<%= distillery.id %>">SHOW ENTRY</a>
       <form action="/distilleries/<%= distillery.id %>/delete" method="POST">
-        <input class="btn btn-danger" type="submit" value="DELETE ENTRY" />
+        <input type="submit" value="DELETE ENTRY" />
       </form>
-    </div>
+    <form action="/distilleries/<%= distillery.id %>/edit" method="GET">
+      <input type="submit" value="EDIT ENTRY" />
+    </form>
 <hr />
 <% end %>
 </div>
