@@ -1,0 +1,23 @@
+<div class="table">
+  <h3>CURRENT STOCKLIST</h3>
+  <hr>
+  <% @bottles.each do |bottle| %>
+
+  <p>Brand: <%= bottle.name() %></p>
+  <p>Type: <%= bottle.type() %></p>
+  <p>Quantity: <%= bottle.quantity() %></p>
+  <p>Distillery: <%= bottle.distillery.name() %></p>
+  <p>Buy price: £<%= bottle.buy_price() %></p>
+  <p>Sell price: £<%= bottle.sell_price() %></p>
+  <p>Stock level: <%= bottle.stock_level() %></p>
+  <p>Mark up: £<%= bottle.mark_up() %></p>
+  <a class="show" href="/bottles/<%= bottle.id %>">SHOW ORDER</a>
+  <form action="/bottles/<%= bottle.id %>/edit" method="GET">
+    <input type="submit" value="UPDATE ORDER" />
+  </form>
+  <form action="/bottles/<%= bottle.id %>/delete" method="POST">
+    <input type="submit" value="DELETE ORDER" />
+  </form>
+  <hr />
+  <% end %>
+</div>
