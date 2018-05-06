@@ -2,7 +2,7 @@
 
 ## Whisky Store Inventory Management Tool
 
-The owners of a Whisky Store want a web app which will help them keep on top of the store inventory. This is not an app that customers will see, but will be used to check stock levels and see what needs to be ordered soon.
+The owners of a whisky store want a web app which will help them keep on top of the store inventory. This is not an app that customers will see, but will be used to check stock levels and see what needs to be ordered soon.
 
 You should be able to add stock, which would have a distillery and brand as well as the quantity available.
 
