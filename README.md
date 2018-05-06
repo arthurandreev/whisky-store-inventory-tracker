@@ -18,3 +18,4 @@ You should be able to add stock, which would have a distillery and brand as well
 - Add a buy and sell price to each stock item
 - Calculate the possible markup on items and show on inventory page
 - Any other ideas you might come up with
+
