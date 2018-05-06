@@ -84,6 +84,7 @@ class Bottle
       return profit
     end
 
+    #self.find function searches data to find a bottle of whisky by id in database
     def self.find( id )
       sql = "SELECT * FROM bottles WHERE id = $1"
       values = [id]
@@ -92,13 +93,16 @@ class Bottle
       return result
     end
 
+    #self.all function sorts data to display bottles of whisky by quantity in ascending order
     def self.all()
-      sql = "SELECT * FROM bottles"
+      sql = "SELECT * FROM bottles
+      ORDER BY quantity ASC"
       bottle_data = SqlRunner.run(sql)
       bottles = Bottle.map_items(bottle_data)
       return bottles
     end
 
+    #self.map_items creates and returns an array of all bottle items
     def self.map_items(bottle_data)
       return bottle_data.map { |bottle| Bottle.new(bottle) }
     end

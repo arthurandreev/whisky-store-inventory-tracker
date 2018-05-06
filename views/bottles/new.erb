@@ -1,9 +1,7 @@
-<div class="table">
-  <h3>ADD NEW STOCK BELOW:</h3>
+<p class="add_item">PLEASE ADD NEW STOCK BELOW:</p>
 <form class="bottle_form" method="post" action="/bottles">
-  <div class="form-group">
   <label for="name">Brand</label>
-    <input id="name" type="text" name="name" class="form-control" placeholder="Enter brand here" />
+    <input type="text" name="name" class="form-control" placeholder="Enter brand here" />
     <br>
   <label for="type-select">Select type</label>
     <select id="type-select" name="type" class="form-control">
@@ -27,7 +25,6 @@
   <label for="sell_price">Sell price</label>
     <input id="sell_price" type="number" name="sell_price" class="form-control" placeholder="Enter sell price here"/>
     <br>
-    <input type="submit" value="ADD NEW PRODUCT"/>
+    <input class="button" type="submit" value="ADD NEW PRODUCT"/>
 </form>
-</div>
 <footer class="footer"> (c) 2018 Whisky Villains</footer>

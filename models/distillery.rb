@@ -49,6 +49,7 @@ def delete()
   SqlRunner.run( sql, values )
 end
 
+
 def bottle()
   sql = "SELECT * FROM bottles
   WHERE distillery_id = $1"
@@ -59,6 +60,7 @@ def bottle()
   return bottle
 end
 
+#finds a bottle by id entered in the browser or console
 def self.find( id )
   sql = "SELECT * FROM distilleries WHERE id = $1"
   values = [id]
@@ -67,6 +69,7 @@ def self.find( id )
   return result
 end
 
+#finds and returns all bottles
 def self.all()
   sql = "SELECT * FROM distilleries"
   distillery_data = SqlRunner.run(sql)
@@ -74,6 +77,7 @@ def self.all()
   return distilleries
 end
 
+#self.map_items creates and returns an array of all distillery items
 def self.map_items(distillery_data)
   return distillery_data.map { |distillery| Distillery.new(distillery) }
 end

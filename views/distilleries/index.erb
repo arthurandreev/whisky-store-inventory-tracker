@@ -1,19 +1,30 @@
-<div class="table">
+<div>
 <h3>CURRENT LIST OF DISTILLERIES</h3>
-<hr>
 <% @distilleries.each do |distillery| %>
 
-<p>Name: <%= distillery.name() %></p>
-<p>Region: <%= distillery.region() %></p>
-<a class="show" href="/distilleries/<%= distillery.id %>">SHOW DISTILLERY</a>
-<form action="/distilleries/<%= distillery.id %>/edit" method="GET">
-  <input type="submit" value="UPDATE DISTILLERY" />
-    </form>
-  <br>
-      <form action="/distilleries/<%= distillery.id %>/delete" method="POST">
-        <input type="submit" value="DELETE DISTILLERY" />
-      </form>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">DISTILLERY NAME</th>
+      <th scope="col">DISTILLERY LOCATION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%=distillery.name()%></td>
+      <td><%=distillery.region()%></td>
+    </tr>
+  </tbody>
+</table>
 
-<hr />
+<div>
+<a href="http://localhost:4567/distilleries/new" class="btn btn-outline-dark btn-sm btn-block" role="button">ADD NEW DISTILLERY</a>
+<form action="/distilleries/<%= distillery.id %>/edit" method="PUT">
+  <input type="submit" class="btn btn-outline-dark btn-sm btn-block" value="UPDATE DISTILLERY"/>
+    </form>
+      <form action="/distilleries/<%= distillery.id %>/delete" method="POST">
+        <input type="submit" class="btn btn-outline-danger btn-sm btn-block" value="DELETE DISTILLERY"/>
+      </form>
+    </div>
 <% end %>
 </div>
