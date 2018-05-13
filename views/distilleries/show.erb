@@ -1,3 +1,26 @@
-<p>Distillery: <%= @distillery.name %></p>
-<p>Region: <%= @distillery.region %></p>
+<table>
+<tr>
+  <th>Distillery</th>
+  <th>Brand</th>
+  <th></th>
+</tr>
+
+<form method="post" action="/distilleries/<%= @distillery.id %>">
+
+  <td>
+    <label for="name"></label>
+    <input id="name" value="<%= @distillery.name %>" type="text" name="name"/>
+  </td>
+
+  <td>
+    <label for="region"></label>
+    <input type="text" id="type" name="region"
+          value="<%= @distillery.region %>"/>
+  </td>
+  
+  <td>
+  <input type="submit" value="Complete edit"/>
+  </td>
+</form>
+</table>
 <a class="links" href="http://localhost:4567/distilleries">Return to distilleries</a>

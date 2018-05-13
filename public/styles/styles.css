@@ -1,58 +1,53 @@
-html {
+body {
   font-family: monospace;
 }
 
-.index {
-  font-family: monospace;
-  text-align: center;
-}
-
-.table {
-  margin-left: 4px;
-}
-
-.show {
-color: black;
+p {
+  justify-content: left;
+  margin-right: 20em;
 }
 
 .links {
   color: black;
 }
 
-button {
-  position: relative;
-  bottom: 3px;
-}
-
 .grid {
-  border: solid 2px white;
 }
 
 .grid-row {
   display: flex;
   flex-direction: row;
-  background-color: black;
+  background-color: #e3f2fd;
 }
 
 .cell {
   flex: 1;
-  padding: 10px;
-  border: solid 1px white;
+  padding: 1em;
 }
 
-a {
-  color: white;
-  font-family: monospace;
+.navBarLinks {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 1em;
+  text-decoration: none;
+  position: sticky;
+}
+
+.navBarLinks:hover {
+    background-color: white;
 }
 
 .footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #efefef;
+  position: fixed;
+  bottom: 0px;
+  left: 1em;
+  right: 1em;
+  height: 3em;
+  margin: 1px 2px 1px 2px;
+  background-color: #e3f2fd;
   text-align: center;
+  font-style: italic;
 }
 
 @media all and ( min-width: 480px ) {

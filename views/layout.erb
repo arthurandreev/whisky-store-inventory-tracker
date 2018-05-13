@@ -10,15 +10,18 @@
   <nav>
     <div class="grid">
       <div class="grid-row grid-row-lg">
-        <div class="cell"><a href="/">Homepage</a></div>
-        <div class="cell"><a href="/bottles">Stock</a></div>
-        <div class="cell"><a href="/bottles/new">Add stock</a></div>
-        <div class="cell"><a href="/distilleries">Distilleries</a></div>
-        <div class="cell"><a href="/distilleries/new">Add distillery</a>
+        <div class="cell"><a class="navBarLinks" href="/">Homepage</a></div>
+        <div class="cell"><a class="navBarLinks" href="/bottles">Stock</a></div>
+        <div class="cell"><a class="navBarLinks" href="/bottles/new">Add stock</a></div>
+        <div class="cell"><a class="navBarLinks" href="/distilleries">Distilleries</a></div>
+        <div class="cell"><a class="navBarLinks" href="/distilleries/new">Add distillery</a>
         </div>
       </div>
     </nav>
   </div>
+  <!-- before yield -->
     <%= yield %>
+    <!-- after yield -->
+  <footer class="footer"> (c) 2018 Whisky Villains</footer>
   </body>
   </html>

@@ -1,0 +1,51 @@
+<!-- <div class="table">
+<h3>CURRENT LIST OF DISTILLERIES</h3>
+<hr>
+<% @distilleries.each do |distillery| %>
+
+<p>Name: <%= distillery.name() %></p>
+<p>Region: <%= distillery.region() %></p>
+<a class="show" href="/distilleries/<%= distillery.id %>">SHOW DISTILLERY</a>
+<form action="/distilleries/<%= distillery.id %>/edit" method="POST">
+  <input type="submit" value="UPDATE DISTILLERY" />
+  <br>
+      <form action="/distilleries/<%= distillery.id %>/delete" method="POST">
+        <input type="submit" value="DELETE DISTILLERY" />
+      </form>
+    </form>
+<hr />
+<% end %>
+</div> -->
+
+<table class="center" "zebra">
+  <thead>
+  <tr>
+    <th>Name of distillery</th>
+    <th>Region of distillery</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <% @distilleries.each do |distillery| %>
+<tr>
+  <td>
+  <%= distillery.name %>
+</td>
+
+<td>
+<%= distillery.region %>
+</td>
+<td></td>
+<td>
+  <form method="get" action="/distilleries/<%= distillery.id %>">
+    <input type="submit" value="Edit item"></form>
+  </td>
+  <td>
+    <form method="post" action="/distilleries/<%= distillery.id %>/delete">
+      <input type="submit" value="Delete item" />
+    </form>
+  </td>
+<% end %>
+</tr>
+</tbody>
+</table>

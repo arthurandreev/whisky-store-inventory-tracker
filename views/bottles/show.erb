@@ -1,7 +1,60 @@
-<p>Brand: <%= @product.name %></p>
-<p>Type: <%= @product.type %></p>
-<p>Quantity: <%= @product.quantity %></p>
-<p>Distillery: <%= @product.distillery.name %></p>
-<p>Buy price: <%= @product.buy_price %></p>
-<p>Sell price: <%= @product.sell_price %></p>
+  <table>
+  <tr>
+    <th>Distillery</th>
+    <th>Brand</th>
+    <th>Type</th>
+    <th>Quantity</th>
+    <th>Buy price</th>
+    <th>Sell price</th>
+    <th></th>
+  </tr>
+
+<form method="post" action="/bottles/<%= @product.id %>">
+
+<td>
+  <label for="distillery-id"></label>
+  <select id="distillery-id" name="distillery_id">
+    <% for distillery in @distilleries %>
+      <% if distillery.id == @product.distillery_id %>
+      	<option selected="selected" value="<%= distillery.id %>"><%=distillery.name%></option>
+      <% else %>
+        <option value="<%= distillery.id %>"><%=distillery.name%></option>
+      <% end %>
+    <% end %>
+  </select>
+</td>
+
+<td>
+  <label for="name"></label>
+  <input id="name" value="<%= @product.name %>" type="text" name="name"/>
+</td>
+
+<td>
+  <label for="type"></label>
+  <input type="text" id="type" name="type"
+        value="<%= @product.type %>"/>
+</td>
+
+<td>
+  <label for="quantity"></label>
+  <input type="text" id="quantity" name="quantity"
+        value="<%= @product.quantity %>"/>
+</td>
+
+<td>
+  <label for="buyprice"></label>
+  <input id="buyprice" value="<%= @product.buy_price %>" type="text" name="buy_price"/>
+</td>
+
+<td>
+  <label for="sellprice"></label>
+  <input id="sellprice" value="<%= @product.sell_price %>" type="text" name="sell_price"/>
+</td>
+
+<td>
+<input type="submit" value="Complete edit"/>
+</td>
+
+</form>
+</table>
   <a class="links" href="http://localhost:4567/bottles">Return to stock</a>

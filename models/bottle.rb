@@ -88,8 +88,8 @@ class Bottle
     end
 
     def mark_up()
-      profit = @sell_price - @buy_price
-      return profit
+      @profit = @sell_price - @buy_price
+      return @profit
     end
 
     def self.all()

@@ -6,28 +6,11 @@
 </head>
 <body>
   <section class ="homepage">
-    <h3 class="index">WHISKY VILLAINS STOCK MANAGEMENT TOOL</h3>
+    <h3>WHISKY VILLAINS STOCK MANAGEMENT TOOL</h3>
     <section>
-        <a class="links" href="http://localhost:4567/bottles">Stock</a>
-      <p>Go to this page to check the quantity of stock you have in your inventory, delete and/or update stock.<br>
-        Furthermore, useful stock management information such as product mark-up and stock level(high/medium/low) can be found on this page too.</p>
-      </section>
-
-      <section>
-        <a class="links" href="http://localhost:4567/bottles/new">Add stock</a>
-        <p>Go to this page to add a new product to your inventory.</p>
-      </section>
-
-      <section>
-        <a class="links" href="http://localhost:4567/distilleries">Distilleries</a>
-        <p>Go to this page to check what distilleries you are currently sourcing your whisky from and what region of Scotland they come from.</p>
-      </section>
-
-      <section>
-          <a class="links" href="http://localhost:4567/distilleries/new">Add distillery</a>
-        <p>Go to this page to add a new distillery to your list of distilleries.</p>
-      </section>
+      <!-- renders partial template called _navigation -->
+      <%= erb :"_navigation" %>
     </section>
-    <footer class="footer"> (c) 2018 Whisky Villains</footer>
+  </section>
   </body>
   </html>

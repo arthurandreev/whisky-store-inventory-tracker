@@ -27,6 +27,7 @@ class Distillery
     @id = result.first['id'].to_i
 end
 
+
 def update()
   sql = "UPDATE distilleries
     SET

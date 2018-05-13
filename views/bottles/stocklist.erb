@@ -1,0 +1,55 @@
+<table class="center" "zebra">
+  <thead>
+  <tr>
+    <th>Distillery</th>
+    <th>Brand</th>
+    <th>Type</th>
+    <th>Quantity</th>
+    <th>Buy price</th>
+    <th>Sell price</th>
+    <th>Stock level</th>
+    <th>Mark up</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <% @bottles.each do |bottle| %>
+<tr>
+  <td>
+  <%= bottle.distillery.name %>
+</td>
+<td>
+  <%= bottle.name %>
+</td>
+<td>
+  <%= bottle.type %>
+</td>
+<td>
+<%= bottle.quantity %>
+</td>
+<td>
+  <%= bottle.buy_price() %>
+</td>
+<td>
+  <%= bottle.sell_price() %>
+</td>
+<td>
+<%= bottle.stock_level() %>
+</td>
+<td>
+<%= bottle.mark_up() %>
+</td>
+<td></td>
+<td>
+  <form method="get" action="/bottles/<%= bottle.id %>">
+    <input type="submit" value="Edit item"></form>
+  </td>
+  <td>
+    <form method="post" action="/bottles/<%= bottle.id %>/delete">
+      <input type="submit" value="Delete item" />
+    </form>
+  </td>
+<% end %>
+</tr>
+</tbody>
+</table>
