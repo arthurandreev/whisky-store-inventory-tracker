@@ -4,7 +4,7 @@
 
 Homework from Codeclan
 
-Requirements:
+### Requirements:
 
 The owners of a whisky store want a web app which will help them keep on top of the store inventory. This is not an app that customers will see, but will be used to check stock levels and see what needs to be ordered soon.
 
